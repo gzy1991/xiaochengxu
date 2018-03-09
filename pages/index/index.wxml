@@ -7,7 +7,13 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
+   <!--<map longitude="116.4551" latitude="40.2539" bindmarkertap="markertap" ></map>-->
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <button bindtap="scan">扫一扫</button>
+  <button bindtap="getAppInst">获取实例</button>
+  <button bindtap="getLocation">获取位置</button>
+  <view>{{ msg }}</view>
+  <button bindtap="clickMe">点击我</button>
 </view>

@@ -7,16 +7,53 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
+    msg: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //事件处理函数
+  //获取实例
+  getAppInst:function(){
+    console.log(getApp().globalData)
+  },
+  //事件处理函数  点击我
+  clickMe: function () {
+    //console.log(this.msg)
+    //temp = this.msg
+    this.setData({ motto: this.data.motto + app.globalData.userInfo.nickName})
+    //this.setData({ msg: app.globalData.userInfo.nickName+"Hello World" })
+  },
+  //点击地图
+  markertap:function(){
+    //console.log("你点击了地图")
+    this.setData({ motto: this.data.motto + "你点击了地图"})
+  },
+  //扫一扫
+  scan:function(){
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+        this.setData({ motto: this.data.motto +res.result })
+      }
+    })
+  },
+  //获取位置
+  getLocation: function () {
+    wx.getLocation({
+      success: (res) => {
+        var latitude = res.latitude // 经度
+        var longitude = res.longitude // 纬度
+        console.log(latitude)
+        console.log(longitude)
+        this.setData({ motto: this.data.motto+"当前位置:"+latitude + "" + longitude})
+      }
+    })
+  },
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
+    if (app.globalData.userInfo) { 
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true

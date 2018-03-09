@@ -8,7 +8,15 @@
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "text": "相册"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "预约"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我"
       }
     ]
   },
@@ -24,5 +32,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
-  }
+  },
+  "debug": true
 }
