@@ -8,12 +8,92 @@
     </block>
   </view>
    <!--<map longitude="116.4551" latitude="40.2539" bindmarkertap="markertap" ></map>-->
-  <view class="usermotto">
+     <!-- <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view>    -->
+
+  <!-- 列表渲染 -->
+  <!-- 乘法表 -->
+<!-- <view wx:for="{{[1, 2, 3, 4]}}" wx:for-item="i">
+  <view wx:for="{{[1, 2, 3, 4]}}" wx:for-item="j">
+    <view wx:if="{{i <= j}}">
+      {{i}} * {{j}} = {{i * j}}
+    </view>
   </view>
-  <button bindtap="scan">扫一扫</button>
-  <button bindtap="getAppInst">获取实例</button>
-  <button bindtap="getLocation">获取位置</button>
-  <view>{{ msg }}</view>
-  <button bindtap="clickMe">点击我</button>
+</view> -->
+
+<!-- <block wx:for="{{[1, 2, 3]}}">
+  <view> {{index}}: {{item}}</view>
+  <view> {{item}} </view>
+</block> -->
+
+<!-- 当 wx:for 的值为字符串时，会将字符串解析成字符串数组 -->
+<!-- <view wx:for="array">
+  {{item}}
+</view> -->
+
+<!-- wx:key=""  -->
+<!-- <switch wx:for="{{objectArray}}" wx:key="unique"  style="display: block;"> {{item.id}} </switch>
+<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront"> Add to the front </button>
+
+<switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> {{item}} </switch>
+<button bindtap="addNumberToFront"> Add to the front </button> -->
+
+
+  <!-- <view> {{a + b}} + {{c}} + d </view> -->
+  <!-- <view wx:for-items="{{[zero, 1, 2, 3, 4]}}"> {{item}} </view> -->
+  <!-- <view id="item-{{id}}"></view> -->
+  
+  <!-- <checkbox checked="{{false}}"> </checkbox> -->
+  <!-- <button bindtap="scan">扫一扫</button> -->
+  <!-- <button bindtap="getAppInst">获取实例</button> -->
+  <!-- <button bindtap="getLocation">获取位置</button> -->
+  <!-- <view>{{ msg }}</view> -->
+  <!-- <button bindtap="clickMe">点击我</button> -->
+
+
+  <!-- 条件渲染 -->
+  <!-- <view wx:if="{{condition}}"> True </view>
+
+  <view wx:if="{{length > 5}}"> 1 </view>
+  <view wx:elif="{{length > 2}}"> 2 </view>
+  <view wx:else> 3 </view>
+
+  <block wx:if="{{true}}">
+    <view> view1 </view>
+    <view> view2 </view>
+  </block> -->
+
+  <!-- 模板 -->
+  <!-- <template name="msgItem">
+    <view>
+      <text> {{index}}: {{msg}} </text>
+      <text> Time: {{time}} </text>
+    </view>
+  </template>
+
+  <template is="msgItem" data="{{...item}}"/>
+  
+  <template name="odd">
+    <view> odd </view>
+  </template>
+  <template name="even">
+    <view> even </view>
+  </template>
+
+  <block wx:for="{{[1, 2, 3, 4, 5]}}">
+      <template is="{{item % 2 == 0 ? 'even' : 'odd'}}"/>
+  </block> -->
+
+  <!-- 事件 bindtap -->
+  <view id="tapTest" data-hi="WeChat" bindtap="tapName"> Click me! </view>
+
+
+  <!--  -->
+  <!--  -->
+  <!--  -->
+  <!--  -->
+
 </view>
+
