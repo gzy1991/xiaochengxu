@@ -12,7 +12,7 @@
     <text class="user-motto">{{motto}}</text>
   </view>    -->
 
-  <!-- 列表渲染 -->
+  <!-- 1 列表渲染 -->
   <!-- 乘法表 -->
 <!-- <view wx:for="{{[1, 2, 3, 4]}}" wx:for-item="i">
   <view wx:for="{{[1, 2, 3, 4]}}" wx:for-item="j">
@@ -53,7 +53,7 @@
   <!-- <button bindtap="clickMe">点击我</button> -->
 
 
-  <!-- 条件渲染 -->
+  <!-- 2 条件渲染 -->
   <!-- <view wx:if="{{condition}}"> True </view>
 
   <view wx:if="{{length > 5}}"> 1 </view>
@@ -65,7 +65,7 @@
     <view> view2 </view>
   </block> -->
 
-  <!-- 模板 -->
+  <!-- 3 模板 -->
   <!-- <template name="msgItem">
     <view>
       <text> {{index}}: {{msg}} </text>
@@ -86,14 +86,53 @@
       <template is="{{item % 2 == 0 ? 'even' : 'odd'}}"/>
   </block> -->
 
-  <!-- 事件 bindtap -->
-  <view id="tapTest" data-hi="WeChat" bindtap="tapName"> Click me! </view>
+  <!-- 4 事件 bindtap -->
+  <!-- <view id="tapTest" data-hi="WeChat" bindtap="tapName"> Click me! </view> -->
 
 
-  <!--  -->
-  <!--  -->
-  <!--  -->
-  <!--  -->
+  <!-- 5 引用 : import和include  -->
+  <!-- <import src='../template/item.wxml'/>
+  <template is="item" data="{{text: 'forbar'}}"/>
 
-</view>
+  <include src="../common/header.wxml"/>
+  <view> body </view>
+  <include src="../common/footer.wxml"/> -->
+
+  <!-- 6 WXS -->
+
+      <!--wxml-->
+      <wxs module="m1">
+      var msg = "hello world";
+
+      module.exports.message = msg;
+      </wxs>
+
+      <view> {{m1.message}} </view>
+      <view> {{m2.message}} </view>
+
+      <!-- wxml -->
+      <!-- 下面的 getMax 函数，接受一个数组，且返回数组中最大的元素的值 -->
+      <wxs module="m2">
+      var getMax = function(array) {
+        var max = undefined;
+        for (var i = 0; i < array.length; ++i) {
+          max = max === undefined ? 
+            array[i] : 
+            (max >= array[i] ? max : array[i]);
+        }
+        return max;
+      }
+
+      module.exports.getMax = getMax;
+      </wxs>
+
+      <!-- 调用 wxs 里面的 getMax 函数，参数为 page.js 里面的 array -->
+      <view> {{m2.getMax(array)}} </view>
+        
+
+
+
+        <!--  -->
+
+      </view>
 

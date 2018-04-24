@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    array: [1, 2, 3, 4, 5, 1, 2, 3, 4],
     item: {
       index: 0,
       msg: 'this is a template',

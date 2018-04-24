@@ -1,14 +1,14 @@
 {
-
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
+        
+        "pagePath": "pages/3_zujian/zujian",
         "text": "首页"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "相册"
+        "pagePath": "pages/index/index",
+        "text": "index"
       },
       {
         "pagePath": "pages/logs/logs",
@@ -20,18 +20,18 @@
       }
     ]
   },
-
-  
-
-  "pages":[
+  "pages": [
+   "input/index",
+    "pages/3_zujian/zujian",
     "pages/index/index",
     "pages/logs/logs"
+    
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "debug": true
 }
